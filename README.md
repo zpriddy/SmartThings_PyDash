@@ -28,8 +28,12 @@ Copy the 'Documents/sample_oauthin.json' to the 'ZP_PyDash/oauthin.json' on your
 
 ## Usage
 ````
-To Come
+run: python main.py
+
+open your browser and goto http://localhost:5000/ 
 ````
+*If you chnaged the host url/IP replace the localhost with that IP. On first run the app will do the smartthings auth as long as you compleated oathin.json.*
+
 ## Info
 
 ## Sample Images
