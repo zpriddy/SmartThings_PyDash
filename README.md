@@ -4,7 +4,10 @@
 *Credit given to: FlorianZ for hadashboard [https://github.com/FlorianZ/hadashboard]*
 
 ## Requirements
-*pydashie*
+*pydashie* - This dashboard is built ontop of pyDashie [https://github.com/evolvedlight/pydashie] and will have the same requirements. The python packages required are: 
+*flask>=0.9*
+*CoffeeScript*
+*requests*
 
 
 ## ?. Install the SmartApp
