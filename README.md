@@ -29,7 +29,9 @@ To Come
 ## Info
 
 ## Sample Images
-![alt text](https://raw.githubusercontent.com/zpriddy/Nest_Data_Logger/master/sample_logs/sample_graph.png "Sample Graph")
+![alt text](https://raw.githubusercontent.com/zpriddy/SmartThings_PyDash/master/Documents/Images/ZP_SmartThings_PyDash1.png "Main Page")
+![alt text](https://raw.githubusercontent.com/zpriddy/SmartThings_PyDash/master/Documents/Images/ZP_SmartThings_PyDash2.png "Dimmer Level")
+![alt text](https://raw.githubusercontent.com/zpriddy/SmartThings_PyDash/master/Documents/Images/ZP_SmartThings_PyDash3.png "Sensors")
 
 ## Notes
 
