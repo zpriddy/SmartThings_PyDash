@@ -19,7 +19,7 @@ Hit the **'Create'** button to get to the code editor. Replace the content of th
 Click the **'Save'** button and then **'Publish -> For Me'**.
 
 ## ?. Configure oauthin.json File
-Copy the sample_oauthin.json from the Documanets folder to the ZP_PyDash folder on your host/server and rename it oauthin.json. Once copied open the file in a text editor and past the **'OAuth Client ID'** and **'OAuth Client Secret'** from the last step. Also if you are not going to be running this as localhost, enter the server hostname/ip/url here. (If you want to chnage the port you will have to chnage it in another spot as well..)
+Copy the 'Documents/sample_oauthin.json' to the 'ZP_PyDash/oauthin.json' on your host/server. Once copied open the file in a text editor and past the **'OAuth Client ID'** and **'OAuth Client Secret'** from the last step. Also if you are not going to be running this as localhost, enter the server hostname/ip/url here. (If you want to chnage the port you will have to chnage it in another spot as well..)
 
 
 ## Usage
