@@ -28,7 +28,8 @@ To Come
 ````
 ## Info
 
-
+## Sample Images
+![alt text](https://raw.githubusercontent.com/zpriddy/Nest_Data_Logger/master/sample_logs/sample_graph.png "Sample Graph")
 
 ## Notes
 
