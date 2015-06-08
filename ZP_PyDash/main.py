@@ -310,7 +310,7 @@ def modeWeather():
 
 @app.route("/dashboard/<dashlayout>/")
 def custom_layout(dashlayout):
-    return render_template('%s.html'%dashlayout, title='pyDashie')
+    return render_template('%s.html'%dashlayout, title='ZP SmartThings PyDash')
 
 @app.route("/assets/application.js")
 def javascripts():
