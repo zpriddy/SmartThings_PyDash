@@ -1,6 +1,6 @@
 import os
 import logging
-import example_app
+import zp_st_pydash_app
 from urllib import quote, unquote
 from flask import Flask, render_template, Response, send_from_directory, request, current_app, redirect, jsonify, json
 import zp_pydashie_interface as zp_st
@@ -473,14 +473,14 @@ def close_stream(*args, **kwargs):
     log.info('Client %s disconnected. Total Clients: %s' % (event_stream_port, len(xyzzy.events_queue)))
 
 
-def run_sample_app():
+def run_zp_st_pydash_app():
     import SocketServer
     SocketServer.BaseServer.handle_error = close_stream
     SocketServer.ThreadingTCPServer.allow_reuse_address = True
-    example_app.run(app, xyzzy)
+    zp_st_pydash_app.run(app, xyzzy)
 
 
 if __name__ == "__main__":
     zp_st.initST()
-    run_sample_app()
+    run_zp_st_pydash_app()
 

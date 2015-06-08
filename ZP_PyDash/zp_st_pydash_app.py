@@ -1,4 +1,4 @@
-from example_samplers import *
+from smartthings_samplers import *
 
 samplers = []
 

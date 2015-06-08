@@ -36,3 +36,7 @@ To Come
 ## Notes
 
 
+## To Do:
+*Add a Update All devices function - This will make it so all devices are updated in only one call..*
+
+
