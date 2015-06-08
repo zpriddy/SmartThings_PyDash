@@ -5,10 +5,11 @@
 
 ## Requirements
 *pydashie* - This dashboard is built ontop of pyDashie [https://github.com/evolvedlight/pydashie] and will have the same requirements. The python packages required are: 
-*flask>=0.9
-*CoffeeScript
-*requests
-
+````
+flask>=0.9
+CoffeeScript
+requests
+````
 
 ## ?. Install the SmartApp
 Navigate to https://graph.api.smartthings.com and log in to your SmartThings IDE account. Select the **'My SmartApps'** tab, and click the **'+ New SmartApp'** button to create a new SmartApp.
