@@ -93,7 +93,7 @@ class SmartThings(object):
 		}
 
 		devices_response = requests.get(url=devices_url, params=devices_paramd, headers=devices_headerd, json=devices_paramd)
-		print devices_response.headers
+		#print devices_response.headers
 		self.deviceds = devices_response.json()
 
 
@@ -293,7 +293,7 @@ class SmartThings(object):
 	def updateColor(self):
 		colors = {}
 		colors = self.request_devices("color")
-		print colors
+		#print colors
 
 		return colors
 

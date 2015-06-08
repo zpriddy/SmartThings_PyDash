@@ -19,7 +19,7 @@ def run(app, xyzzyP):
         ModeSampler(xyzzy, 10),
         PresenceSampler(xyzzy, 10),
         WeatherSampler(xyzzy, 600),
-        TempSampler(xyzzy,30)
+        TempSampler(xyzzy,60)
         
     ]
 

@@ -13,8 +13,14 @@ log = logging.getLogger(__name__)
 
 @app.route("/")
 def main():
+    if(zp_st.getHostUrl() == None):
+        print "Trying to set Host URL"
+        zp_st.setHostUrl()
+    if(zp_st.getHostUrl() == None):
+        print "Error setting Host URL"
+        exit()
     if(zp_st.initd()):
-        return render_template('main.html', title='pyDashie')
+        return render_template('main.html', title='ZP SmartThings PyDash')
     else:
         return redirect("/auth/")
 
@@ -38,107 +44,81 @@ def init():
 def auth():
     print "auth.."
     zp_st.initST()
-    redirecturl = zp_st.authInit("http://localhost:5000/callback")
+    redirecturl = zp_st.authInit("http://"+ zp_st.getHostUrl() + "/callback")
     return redirect(redirecturl)
 
 @app.route("/reauth/")
 def reauth():
     print "auth.."
-    redirecturl = zp_st.reauth("http://localhost:5000/callback")
+    redirecturl = zp_st.reauth("http://"+ zp_st.getHostUrl() + "/callback")
     return redirect(redirecturl)
 
 @app.route("/callback/")
 def callback():
     authcode = request.args.get('code', '')
-    print authcode
-    redirecturl = zp_st.authSecond(authcode,"http://localhost:5000/callback")
+    redirecturl = zp_st.authSecond(authcode,"http://"+ zp_st.getHostUrl() + "/callback")
     return redirect(redirecturl)
 
 @app.route("/switch/<path:path>/",methods = ['GET','POST'])
 def switchState(path):
     if request.method == 'POST':
-        print "POST"
         data =  request.form
-        #print data
         device = data['deviceId']
-        #print device
         zp_st.toggleSwitch(device)
         status = zp_st.getDeviceStatus('switch',device,'state')
         if (status == 'on'):
             status = 'off'
         else:
             status = 'on'
-
         return Response(json.dumps({'error':1,'switch':status}))
     else:
         device =  unquote(path)
-        #print device
         status = zp_st.getDeviceStatus('switch',device,'state')
         results = {'switch':status}
-        #print results
         return Response(json.dumps(results))
 
 @app.route("/setselectedhue/<path:path>/",methods = ['GET','POST'])
 def selectedHueSet(path):
     device =  unquote(path)
     if request.method == 'POST':
-        print "POST"
-
         hue=zp_st.setSelectedHue(device)
         results = {'Set':True}
-        #print results
         return Response(json.dumps(results))
     else:
-        #device =  unquote(path)
-        #print device
         hue=zp_st.setSelectedHue(device)
         results = {'Set':True}
-        #print results
         return Response(json.dumps(results))
 
 @app.route("/setselecteddimmer/<path:path>/",methods = ['GET','POST'])
 def selectedDimmerSet(path):
     device =  unquote(path)
     if request.method == 'POST':
-        print "POST"
-
         hue=zp_st.setSelectedDimmer(device)
         results = {'Set':True}
-        #print results
         return Response(json.dumps(results))
     else:
         #device =  unquote(path)
-        #print device
         hue=zp_st.setSelectedDimmer(device)
         results = {'Set':True}
-        #print results
         return Response(json.dumps(results))
 
 @app.route("/setcolor/",methods = ['GET','POST'])
 def setColor():
     if request.method == 'POST':
-        print "POST"
         data =  request.form
         device = zp_st.getSelectedHue()
         color = data['color']
         hue = data['hue']
         sat = data['sat']
         results = zp_st.setColorHSLA(device,hue,sat,color)
-
-        #print results
         return Response(json.dumps(results))
     else:
-        #device =  unquote(path)
-        #print device
-        #hue=zp_st.setSelectedHue(device)
         results = {'Set':True}
-        #print results
         return Response(json.dumps(results))
 
 @app.route("/setdimmer/",methods = ['GET','POST'])
 def setDimmer():
     if request.method == 'POST':
-        print "POST"
         data =  request.form
         device = zp_st.getSelectedDimmer()
         level = data['level']
@@ -148,52 +128,34 @@ def setDimmer():
             zp_st.setSwitch(device,'on')
             zp_st.setDimmer(device,level)
         results = {'Set':True}
-        #print results
         return Response(json.dumps(results))
     else:
-        #device =  unquote(path)
-        #print device
-        #hue=zp_st.setSelectedHue(device)
         results = {'Set':True}
-        #print results
         return Response(json.dumps(results))
 
 @app.route("/selectedhue/",methods = ['GET','POST'])
 def selectedHue():
     if request.method == 'POST':
-        print "POST"
-
         return Response(json.dumps({'error':1}))
     else:
-        #device =  unquote(path)
-        #print device
         hue=zp_st.getSelectedHue()
         results = {'selectedhue':hue}
-        #print results
         return Response(json.dumps(results))
 
 @app.route("/selecteddimmer/",methods = ['GET','POST'])
 def selectedDimmer():
     if request.method == 'POST':
-        print "POST"
-
         return Response(json.dumps({'error':1}))
     else:
-        #device =  unquote(path)
-        #print device
         hue=zp_st.getSelectedDimmer()
         results = {'selecteddimmer':hue}
-        #print results
         return Response(json.dumps(results))
 
 @app.route("/color/<path:path>/",methods = ['GET','POST'])
 def colorValue(path):
     if request.method == 'POST':
-        print "POST"
         data =  request.form
-        #print data
         device = data['deviceId']
-        #print device
         zp_st.toggleSwitch(device)
         status = zp_st.getDeviceStatus('switch',device,'state')
         if (status == 'on'):
@@ -204,112 +166,85 @@ def colorValue(path):
         return Response(json.dumps({'error':1,'switch':status}))
     else:
         device =  unquote(path)
-        #print device
         hue = zp_st.getDeviceStatus('color',device,'hue')
         sat = zp_st.getDeviceStatus('color',device,'sat')
         results = {'hue':hue,'sat':sat}
-        #print results
         return Response(json.dumps(results))
 
 @app.route("/hue/<path:path>/<path:color>/",methods = ['GET','POST'])
 def hueColor(path,color):
     if request.method == 'POST':
-        print "POST"
         data =  request.form
-        #print data
         device = data['deviceId']
-        #print device
         zp_st.toggleSwitch(device)
         status = zp_st.getDeviceStatus('switch',device,'state')
         if (status == 'on'):
             status = 'off'
         else:
             status = 'on'
-
         return Response(json.dumps({'error':1,'switch':status}))
     else:
         device =  unquote(path)
-        #print device
         status = zp_st.getDeviceStatus('switch',device,'state')
         results = {'switch':status,'color':color}
-        #print results
         return Response(json.dumps(results))
 
 @app.route("/contact/<path:path>/",methods = ['GET','POST'])
 def contactState(path):
     if request.method == 'POST':
-        print "POST"
-
         return Response(json.dumps({'error':0}))
     else:
         device =  unquote(path)
         status = zp_st.getDeviceStatus('contact',device,'state')
         results = {'state':status}
-        #print results
         return Response(json.dumps(results))
 
 @app.route("/humidity/<path:path>/",methods = ['GET','POST'])
 def humidityValue(path):
     if request.method == 'POST':
-        print "POST"
-
         return Response(json.dumps({'error':0}))
     else:
         device =  unquote(path)
         status = zp_st.getDeviceStatus('humidity',device,'value')
         results = {'value':status}
-        #print results
         return Response(json.dumps(results))
 
 @app.route("/power/<path:path>/",methods = ['GET','POST'])
 def powerState(path):
     if request.method == 'POST':
-        print "POST"
-
         return Response(json.dumps({'error':0}))
     else:
         device =  unquote(path)
         power = zp_st.getDeviceStatus('power',device,'value')
         energy  = zp_st.getDeviceStatus('power',device,'energy')
         results = {'value':power,'energy':energy}
-        #print results
         return Response(json.dumps(results))
 
 @app.route("/presence/<path:path>/",methods = ['GET','POST'])
 def presenceState(path):
     if request.method == 'POST':
-        print "POST"
-
         return Response(json.dumps({'error':0}))
     else:
         device =  unquote(path)
         status = zp_st.getDeviceStatus('presence',device,'state')
         results = {'state':status}
-        #print results
         return Response(json.dumps(results))
 
 @app.route("/motion/<path:path>/",methods = ['GET','POST'])
 def motionState(path):
     if request.method == 'POST':
-        print "POST"
-
         return Response(json.dumps({'error':0}))
     else:
         device =  unquote(path)
         status = zp_st.getDeviceStatus('motion',device,'state')
         results = {'state':status}
-        #print results
         return Response(json.dumps(results))
 
 @app.route("/dimmer/<path:path>/",methods = ['GET','POST'])
 def dimmerState(path):
     if request.method == 'POST':
-        print "POST"
         data =  request.form
-        print data
         device = data['deviceId']
-        print device
-        print data['deviceType']
         if( data['deviceType'] == 'dimmerLevel'):
             status = zp_st.getDeviceStatus('switch',device,'state')
             if (status == 'on') :
@@ -330,57 +265,46 @@ def dimmerState(path):
 
     else:
         device =  unquote(path)
-        #print device
         state = zp_st.getDeviceStatus('dimmer',device,'state')
         level = zp_st.getDeviceStatus('dimmer',device,'level')
         results = {'state':state,'level':level}
-        #print results
         return Response(json.dumps(results))
 
 @app.route("/mode/",methods = ['GET','POST'])
 def modeState():
     if request.method == 'POST':
-        #print "POST"
         return Response(json.dumps({'error':1}))
     else:
         mode = zp_st.getMode()
         results = {'mode':mode}
-        #print results
         return Response(json.dumps(results))
 
 @app.route("/setmode/<path:path>",methods = ['GET','POST'])
 def modeSet(path):
     if request.method == 'POST':
-        #print "POST"
         return Response(json.dumps({'error':1}))
     else:
         mode =  unquote(path)
         zp_st.setMode(mode)
-        #results = {'mode':mode}
-        #print results
         return redirect("/")
 
 @app.route("/temp/<path:path>/",methods = ['GET','POST'])
 def tempState(path):
     if request.method == 'POST':
-        #print "POST"
         return Response(json.dumps({'error':1}))
     else:
         device =  unquote(path)
         temp = zp_st.getDeviceStatus('temperature',device,'value')
         results = {'value':temp}
-        #print results
         return Response(json.dumps(results))
 
 @app.route("/weather/",methods = ['GET','POST'])
 def modeWeather():
     if request.method == 'POST':
-        #print "POST"
         return Response(json.dumps({'error':1}))
     else:
         weather = zp_st.getWeather()
         results = weather
-        #print results
         return Response(json.dumps(results))
 
 
@@ -557,7 +481,6 @@ def run_sample_app():
 
 
 if __name__ == "__main__":
-    #zp_st.auth()
     zp_st.initST()
     run_sample_app()
-    #example_app.startSamplers()
+

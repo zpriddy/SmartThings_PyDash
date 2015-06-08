@@ -17,6 +17,8 @@ callback_auth_url = "https://graph.api.smartthings.com/oauth/token?grant_type=au
 stInitd = False
 selectedHue = None
 selectedDimmer = None
+hostURL = None
+
 
 
 def initST():
@@ -25,6 +27,18 @@ def initST():
 	global allDevices
 	stInitd = False
 	smartThings = zp_smartthings.SmartThings()
+
+def setHostUrl(filename="oauthin.json"):
+	global hostURL
+	oauthIn = {}
+	with open(filename) as oauthfile:
+		oauthIn = json.load(oauthfile)
+	hostURL = oauthIn['host_url']
+
+def getHostUrl():
+	global hostURL
+	return hostURL
+
 
 
 def initd():
@@ -75,7 +89,7 @@ def authSecond(code, url, filename="smartthings.json"):
 	authdata['api'] = "https://graph.api.smartthings.com/api/smartapps/endpoints/" + oauthIn['client_id'] + "/"
 	authdata['api_location'] = "graph.api.smartthings.com"
 
-	print authdata
+	#print authdata
 
 	with open(filename,'w') as oauthfile:
 		json.dump(authdata,oauthfile)

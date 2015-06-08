@@ -1,0 +1,5 @@
+{
+  "client_id": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+  "client_secret": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+  "host_url":"localhost:5000"
+}
