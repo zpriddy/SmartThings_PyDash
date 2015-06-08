@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>{{title}}</title>
+
+ <!-- The javascript and css are managed by sprockets. The files can be found in the /assets folder-->
+     <script type='text/javascript'>
+     $(function() {
+       Dashing.widget_base_dimensions = [100, 100]
+       Dashing.numColumns = 7
+       Dashing.cycleDashboards({timeInSeconds: 15, stagger: true});
+     });
+     </script>
+
+  <script type="text/javascript" src="/assets/application.js"></script>
+  <link rel="stylesheet" href="/assets/application.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+  <link rel="icon" href="/assets/images/favicon.ico">
+
+</head>
+  <body>
+    
+      <div class="gridster">
+        <ul>
+          
+
+          <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+            <div data-id="clock" data-view="Clock" data-title="Clock"></div>
+          </li>
+
+          <li data-row="3" data-col="3" data-sizex="2" data-sizey="1">
+            <div style="background-color:#ffaa00" data-id="mode" data-view="Stmode" data-title="Current Mode" data-page="3" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+           <li data-row="1" data-col="5" data-sizex="1" data-sizey="1">
+             <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-device="j.Yard Lights" data-title="Yard Lights" data-page="10" data-stagger="false" data-fasttransition="true" data-color="#aaff00"></div>
+          </li>
+
+          <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
+            <div data-id="stswitch" data-view="Stswitch" data-title="Server Room AC" data-device="Server Room AC" data-iconm="connectdevelop"></div>
+          </li>
+
+          <li data-row="1" data-col="6" data-sizex="1" data-sizey="1">
+             <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-device="c.Kitchen" data-title="Kitchen" data-page="10" data-stagger="false" data-fasttransition="true" data-color="#aaff00"></div>
+          </li>
+
+          <li data-row="2" data-col="6" data-sizex="1" data-sizey="1">
+             <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-device="d.Living Room" data-title="Living Room" data-page="10" data-stagger="false" data-fasttransition="true" data-color="#aaff00"></div>
+          </li>
+
+          <li data-row="2" data-col="5" data-sizex="1" data-sizey="1">
+             <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-device="g.Bedroom" data-title="Bedroom" data-page="10" data-stagger="false" data-fasttransition="true" data-color="#aaff00"></div>
+          </li>
+
+          <li data-row="3" data-col="5" data-sizex="1" data-sizey="1">
+             <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-device="i.Bedroom Fan" data-title="Bedroom Fan" data-page="10" data-stagger="false" data-fasttransition="true" data-color="#aaff00"></div>
+          </li>
+
+          <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
+            <div style="background-color:#6600CC" data-id="changepage" data-view="Changepage" data-icon="bars" data-title="Dimmers" data-page="4" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
+            <div data-id="stcontact" data-view="Stcontact" data-title="Front Door" data-device="Front Door"></div>
+          </li>
+
+          <li data-row="4" data-col="2" data-sizex="1" data-sizey="1">
+            <div data-id="stcontact" data-view="Stcontact" data-title="Laundry Room" data-device="Laundry Room"></div>
+          </li>
+
+          <li data-row="4" data-col="3" data-sizex="1" data-sizey="1">
+            <div data-id="stcontact" data-view="Stcontact" data-title="Office" data-device="Office Door"></div>
+          </li>
+
+          <li data-row="4" data-col="4" data-sizex="1" data-sizey="1">
+            <div data-id="stswitch" data-view="Stswitch" data-title="Pre-Peak" data-device="Pre-Peak" data-iconm="dot-circle-o"></div>
+          </li>
+
+          <li data-row="4" data-col="5" data-sizex="1" data-sizey="1">
+            <div data-id="stswitch" data-view="Stswitch" data-title="Peak" data-device="Peak" data-iconm="tachometer"></div>
+          </li>
+
+          <li data-row="4" data-col="6" data-sizex="1" data-sizey="1">
+            <div data-id="stswitch" data-view="Stswitch" data-title="Motion Light Override" data-device="Motion Light Override" data-iconm="times"></div>
+          </li>
+
+          <li data-row="2" data-col="7" data-sizex="1" data-sizey="1">
+            <div style="background-color:Blue" data-id="changepage" data-view="Changepage" data-icon="bars" data-title="Switches" data-page="2" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="3" data-col="7" data-sizex="1" data-sizey="1">
+            <div style="background-color:Orange" data-id="changepage" data-view="Changepage" data-icon="bars" data-title="Sensors" data-page="6" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="4" data-col="7" data-sizex="1" data-sizey="1">
+            <div style="background-color:Red" data-id="changepage" data-view="Changepage" data-icon="lightbulb-o" data-title="Hues" data-page="8" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="1" data-col="3" data-sizex="2" data-sizey="2">
+            <div data-id="weather" data-view="Stweather"></div>
+          </li>
+
+          <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+            <div data-id="sttemp" data-view="Sttemp" data-title="Server Room" data-device="Server Room"></div>
+          </li>
+
+          <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
+            <div data-id="sttemp" data-view="Sttemp" data-title="Nest" data-device="Nest"></div>
+          </li>
+
+
+
+        </ul>
+    </div>
+ 
+
+ 
+
+    <div class="gridster">
+        <ul>
+          <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+            <div data-id="stswitch" data-view="Stswitch" data-title="Server Room AC" data-device="Server Room AC" data-iconm="connectdevelop"></div>
+          </li>
+
+      
+          <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
+            <div data-id="stswitch" data-view="Stswitch" data-title="Office AC Override" data-device="Office AC Override" data-iconm="magic"></div>
+          </li> 
+
+          </li>
+          <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
+            <div data-id="stswitch" data-view="Stswitch" data-title="Living Room Lamp" data-device="Living Room Lamp"  data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li> 
+
+          
+          <li data-row="1" data-col="4" data-sizex="1" data-sizey="1">
+            <div data-id="stswitch" data-view="Stswitch" data-title="Bedroom Fan" data-device="Bedroom Fan" data-iconm="circle-o-notch"></div>
+          </li> 
+
+          
+          <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+            <div data-id="stswitch" data-view="Stswitch" data-title="House Sitter Enable" data-device="House Sitter Enable" data-iconm="life-ring"></div>
+          </li>
+
+          <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+            <div data-id="stswitch" data-view="Stswitch" data-title="Pre-Peak" data-device="Pre-Peak" data-iconm="dot-circle-o"></div>
+          </li>
+
+          <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+            <div data-id="stswitch" data-view="Stswitch" data-title="Peak" data-device="Peak" data-iconm="tachometer"></div>
+          </li>
+
+          <li data-row="2" data-col="4" data-sizex="1" data-sizey="1">
+            <div data-id="stswitch" data-view="Stswitch" data-title="Motion Light Override" data-device="Motion Light Override" data-iconm="times"></div>
+          </li>
+
+          <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
+            <div style="background-color:#6600CC" data-id="back" data-view="Changepage" data-icon="arrow-left" data-title="Back" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+        </ul>
+    </div>
+  
+
+  
+      <div class="gridster">
+        <ul>
+          <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+            <div style="background-color:purple" data-id="sleeping" data-view="Stmodechange" data-icon="arrow-left" data-title="Set Mode To:" data-page="1" data-stagger="false" data-fasttransition="true" data-mode="Sleeping"></div>
+          </li>
+
+          <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
+            <div style="background-color:#0066CC" data-id="home" data-view="Stmodechange" data-icon="arrow-left" data-title="Set Mode To:" data-page="1" data-stagger="false" data-fasttransition="true" data-mode="Home"></div>
+          </li>
+
+          <li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
+            <div style="background-color:#333CCC" data-id="arriveaftersleeping" data-view="Stmodechange" data-icon="arrow-left" data-title="Set Mode To:" data-page="1" data-stagger="false" data-fasttransition="true" data-mode="Arrive After Sleeping"></div>
+          </li>
+
+          <li data-row="4" data-col="1" data-sizex="2" data-sizey="1">
+            <div style="background-color:#000099" data-id="movie" data-view="Stmodechange" data-icon="arrow-left" data-title="Set Mode To:" data-page="1" data-stagger="false" data-fasttransition="true" data-mode="Movie"></div>
+          </li>
+         
+
+          <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
+              <div style="background-color:#6600CC" data-id="back" data-view="Changepage" data-icon="arrow-left" data-title="Back" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+        </ul>
+      </div>
+
+
+      <div class="gridster"> <!-- Dimmer Groups Page - PAGE 4 -->
+        <ul>
+          
+          <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+            <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-device="a.Inside lights" data-title="Inside Lights" data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          
+          <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
+            <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-device="e.Outside Lights" data-title="Outside Lights" data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
+            <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-device="j.Yard Lights" data-title="Yard Lights" data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          
+          <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+            <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-device="h.Bedroom Mood" data-title="Bedroom Mood" data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+         
+          <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+            <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-device="g.Bedroom" data-title="All Bedroom" data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          
+          <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+            <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-device="i.Bedroom Fan" data-title="Bedroom Fam" data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          
+          <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+            <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-device="b.Kitchen Fan" data-title="Kitchen Fan" data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          
+          <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
+            <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-device="d.Living Room" data-title="Living Room" data-page="10" data-stagger="false" data-fasttransition="true" ></div>
+          </li>
+
+          <li data-row="2" data-col="7" data-sizex="1" data-sizey="1">
+            <div style="background-color:#6600CC" data-id="changepage" data-view="Changepage" data-icon="bars" data-title="All Dimmers" data-page="5" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
+            <div style="background-color:#6600CC" data-id="back" data-view="Changepage" data-icon="arrow-left" data-title="Back" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+
+        </ul>
+    </div>
+
+    <div class="gridster"> <!-- ALL DIMMERS PAGE - PAGE 5 -->
+        <ul>
+          
+          <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+           <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-title="Bedroom (fan 1)" data-device="Bedroom (fan 1)"  data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          
+          <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
+           <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-title="Bedroom (fan 2)" data-device="Bedroom (fan 2)"  data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
+           <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-title="Bedroom (fan 3)" data-device="Bedroom (fan 3)"  data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          
+          <li data-row="1" data-col="4" data-sizex="1" data-sizey="1">
+           <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-title="Ariels Lamp" data-device="Ariels Lamp"  data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+
+          
+          <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+           <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-title="Living Room 1" data-device="Living Room 1"  data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          
+          <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+           <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-title="Living Room 2" data-device="Living Room 2"  data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          
+          <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+           <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-title="Living Room 3" data-device="Living Room (Sofa)"  data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          
+          <li data-row="2" data-col="4" data-sizex="1" data-sizey="1">
+           <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-title="Living Room 4" data-device="Living Room (Door)"  data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+         
+          <li data-row="2" data-col="5" data-sizex="1" data-sizey="1">
+           <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-title="Living Room" data-device="d.Living Room"  data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          
+          <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+           <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-title="Kitchen Stove" data-device="Living Room (TV)"  data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          
+          <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
+           <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-title="Kitchen Sink" data-device="Kitchen Sink Light"  data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li> 
+
+          
+          <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
+           <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-title="Kitchen Fan Window" data-device="Kitchen (Window)"  data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li> 
+
+          
+          <li data-row="3" data-col="4" data-sizex="1" data-sizey="1">
+           <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-title="Kitchen Fan Door" data-device="Kitchen (Door)"  data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li> 
+
+          
+          <li data-row="3" data-col="5" data-sizex="1" data-sizey="1">
+           <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-title="Kitchen Fan Sink" data-device="Kitchen (Sink)"  data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li> 
+
+          
+          <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
+           <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-title="Front Door" data-device="Front Door"  data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          
+          <li data-row="4" data-col="2" data-sizex="1" data-sizey="1">
+           <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-title="Driveway" data-device="Driveway"  data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li> 
+
+          
+          <li data-row="4" data-col="3" data-sizex="1" data-sizey="1">
+           <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-title="Side Yard" data-device="Side Yard"  data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li> 
+
+          
+          <li data-row="4" data-col="4" data-sizex="1" data-sizey="1">
+           <div data-id="stdimmer" data-view="Stselectdimmer" data-icon="lightbulb-o" data-title="Laundry Room" data-device="Laundry Room"  data-page="10" data-stagger="false" data-fasttransition="true"></div>
+          </li> 
+
+          <li data-row="2" data-col="7" data-sizex="1" data-sizey="1">
+            <div style="background-color:#6600CC" data-id="changepage" data-view="Changepage" data-icon="bars" data-title="Dimmers" data-page="4" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
+            <div style="background-color:#6600CC" data-id="back" data-view="Changepage" data-icon="home" data-title="Home" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+        </ul>
+    </div>
+
+    <div class="gridster">
+        <ul>
+
+          <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+            <div data-id="sttemp" data-view="Sttemp" data-title="Nest" data-device="Nest"></div>
+          </li> 
+
+          <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
+            <div data-id="sttemp" data-view="Sttemp" data-title="Server Room" data-device="Server Room"></div>
+          </li>
+
+      
+          <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
+            <div data-id="sttemp" data-view="Sttemp" data-title="Laundry Room Door" data-device="Laundry Room"></div>
+          </li> 
+
+          <li data-row="1" data-col="4" data-sizex="1" data-sizey="1">
+            <div data-id="sttemp" data-view="Sttemp" data-title="Front Door" data-device="Front Door"></div>
+          </li> 
+
+          <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+            <div data-id="stcontact" data-view="Stcontact" data-title="Front Door" data-device="Front Door"></div>
+          </li>
+
+          <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+            <div data-id="stcontact" data-view="Stcontact" data-title="Laundry Room" data-device="Laundry Room"></div>
+          </li>
+
+          <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+            <div data-id="stcontact" data-view="Stcontact" data-title="Office" data-device="Office Door"></div>
+          </li>
+
+          <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
+            <div style="background-color:#6600CC" data-id="back" data-view="Changepage" data-icon="arrow-left" data-title="Back" data-page="1" data-stagger="false" data-fasttransition="true">
+          </li>
+
+          <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+            <div data-id="stmotion" data-view="Stmotion" data-title="Kitchen" data-device="Kitchen Motion"></div>
+          </li>
+
+          <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
+            <div data-id="stmotion" data-view="Stmotion" data-title="Server Room" data-device="Server Room"></div>
+          </li>
+
+          <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
+            <div data-id="stmotion" data-view="Stmotion" data-title="Living Room" data-device="Living Room"></div>
+          </li>
+
+          <li data-row="3" data-col="4" data-sizex="1" data-sizey="1">
+            <div data-id="stmotion" data-view="Stmotion" data-title="Back Door" data-device="Back Door"></div>
+          </li>
+
+
+
+          <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
+           <div data-id="stpresence" data-view="Stpresence" data-title="Zach" data-device="Zachary's iPhone"></div>
+          </li>
+
+          <li data-row="4" data-col="2" data-sizex="1" data-sizey="1">
+           <div data-id="stpresence" data-view="Stpresence" data-title="Ariel" data-device="Ariel's iPhone"></div>
+          </li>
+
+          <li data-row="4" data-col="3" data-sizex="1" data-sizey="1">
+           <div data-id="stpresence" data-view="Stpresence" data-title="Tara" data-device="Tara's iPhone"></div>
+          </li>
+
+          <li data-row="4" data-col="4" data-sizex="1" data-sizey="1">
+           <div data-id="stpresence" data-view="Stpresence" data-title="House Sitter" data-device="Virtual House Sitter"></div>
+          </li>
+
+          
+
+          <li data-row="2" data-col="7" data-sizex="1" data-sizey="1">
+            <div style="background-color:#6600CC" data-id="changepage" data-view="Changepage" data-icon="arrow-right" data-title="More Sensors" data-page="7" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+        </ul>
+    </div>
+
+    <div class="gridster">
+        <ul>
+          
+          <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+            <div data-id="stmeter" data-view="Stmeter" data-title="Office AC" data-device="Server Room AC" data-min="0" data-max="1000"></div>
+          </li>
+
+          <li data-row="1" data-col="3" data-sizex="2" data-sizey="1">
+            <div data-id="stmeter" data-view="Stmeter" data-title="Bedroom Fan" data-device="Bedroom Fan" data-min="0" data-max="1000"></div>
+          </li>
+
+          <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+            <div data-id="sthumidity" data-view="Sthumidity" data-title="Nest" data-device="Nest"></div>
+          </li>
+
+          <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+            <div data-id="sthumidity" data-view="Sthumidity" data-title="Server Room" data-device="Server Room"></div>
+          </li>
+
+          
+          
+          <li data-row="2" data-col="7" data-sizex="1" data-sizey="1">
+            <div style="background-color:#6600CC" data-id="changepage" data-view="Changepage" data-icon="arrow-left" data-title="Sensors 1" data-page="6" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
+            <div style="background-color:#6600CC" data-id="back" data-view="Changepage" data-icon="home" data-title="Home" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+        </ul>
+    </div>
+
+    <div class="gridster"> <!-- HUE SELECT PAGE - PAGE 8 -->
+        <ul>
+
+          <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+            <div data-id="stcolor" data-view="Stselecthue" data-icon="lightbulb-o" data-device="a.Inside lights" data-title="Inside Lights" data-page="9" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          
+          <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+            <div data-id="stcolor" data-view="Stselecthue" data-icon="lightbulb-o" data-device="h.Bedroom Mood" data-title="Bedroom Mood" data-page="9" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+         
+          <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+            <div data-id="stcolor" data-view="Stselecthue" data-icon="lightbulb-o" data-device="g.Bedroom" data-title="All Bedroom" data-page="9" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          
+          <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+            <div data-id="stcolor" data-view="Stselecthue" data-icon="lightbulb-o" data-device="i.Bedroom Fan" data-title="Bedroom Fam" data-page="9" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          
+          <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+            <div data-id="stcolor" data-view="Stselecthue" data-icon="lightbulb-o" data-device="b.Kitchen Fan" data-title="Kitchen Fan" data-page="9" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          
+          <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
+            <div data-id="stcolor" data-view="Stselecthue" data-icon="lightbulb-o" data-device="d.Living Room" data-title="Living Room" data-page="9" data-stagger="false" data-fasttransition="true" ></div>
+          </li>
+
+          <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
+            <div style="background-color:#6600CC" data-id="back" data-view="Changepage" data-icon="home" data-title="Home" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+        </ul>
+    </div>
+
+
+    <div class="gridster"> <!-- COLOR PAGE - PAGE 9 -->
+        <ul>
+          <!--
+          <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+            <div  data-id="selectcolor" data-view="Stselectcolor" data-icon="lightbulb-o" data-color="#ff00a9" data-title="Pink" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+          -->
+
+          <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+            <div  data-id="selectcolor" data-view="Stselectcolor" data-icon="lightbulb-o" data-color="#22c6dc" data-sat="232" data-hue="189" data-level="100" data-title="Daylight" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+            <div  data-id="selectcolor" data-view="Stselectcolor" data-icon="lightbulb-o" data-color="#ff00c6" data-sat="255" data-hue="316" data-level="50" data-title="Pink" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+            <div  data-id="selectcolor" data-view="Stselectcolor" data-icon="lightbulb-o" data-color="#ff000f" data-sat="255" data-hue="360" data-level="50" data-title="Red" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
+            <div  data-id="selectcolor" data-view="Stselectcolor" data-icon="lightbulb-o" data-color="#000cff" data-sat="255" data-hue="255" data-level="50" data-title="Blue" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
+            <div  data-id="selectcolor" data-view="Stselectcolor" data-icon="lightbulb-o" data-color="#90c638" data-sat="142" data-hue="82" data-level="80" data-title="Soft White" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+            <div  data-id="selectcolor" data-view="Stselectcolor" data-icon="lightbulb-o" data-color="#ff00c6" data-sat="255" data-hue="316" data-level="50" data-title="Pink" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
+            <div  data-id="selectcolor" data-view="Stselectcolor" data-icon="lightbulb-o" data-color="#ff000f" data-sat="255" data-hue="360" data-level="50" data-title="Red" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="4" data-col="2" data-sizex="1" data-sizey="1">
+            <div  data-id="selectcolor" data-view="Stselectcolor" data-icon="lightbulb-o" data-color="#000cff" data-sat="255" data-hue="255" data-level="50" data-title="Blue" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
+            <div style="background-color:#6600CC" data-id="back" data-view="Changepage" data-icon="home" data-title="Home" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+        </ul>
+    </div>
+
+    <div class="gridster"> <!-- DIMMER LEVEL PAGE - PAGE 10 -->
+        <ul>
+
+          <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+            <div  data-id="stsetlevel" data-view="Stsetlevel" data-icon="lightbulb-o" data-color="#FFFFFF" data-level="100" data-title="100%" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+            <div  data-id="stsetlevel" data-view="Stsetlevel" data-icon="lightbulb-o" data-color="#FFFFFF" data-level="90" data-title="90%" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+            <div  data-id="stsetlevel" data-view="Stsetlevel" data-icon="lightbulb-o" data-color="#FFFFFF" data-level="80" data-title="80%" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="2" data-col="4" data-sizex="1" data-sizey="1">
+            <div  data-id="stsetlevel" data-view="Stsetlevel" data-icon="lightbulb-o" data-color="#FFFFFF" data-level="70" data-title="70%" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="2" data-col="5" data-sizex="1" data-sizey="1">
+            <div  data-id="stsetlevel" data-view="Stsetlevel" data-icon="lightbulb-o" data-color="#FFFFFF" data-level="60" data-title="60%" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+            <div  data-id="stsetlevel" data-view="Stsetlevel" data-icon="lightbulb-o" data-color="#FFFFFF" data-level="50" data-title="50%" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
+            <div  data-id="stsetlevel" data-view="Stsetlevel" data-icon="lightbulb-o" data-color="#FFFFFF" data-level="40" data-title="40%" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
+            <div  data-id="stsetlevel" data-view="Stsetlevel" data-icon="lightbulb-o" data-color="#FFFFFF" data-level="30" data-title="30%" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="3" data-col="4" data-sizex="1" data-sizey="1">
+            <div  data-id="stsetlevel" data-view="Stsetlevel" data-icon="lightbulb-o" data-color="#FFFFFF" data-level="20" data-title="20%" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="3" data-col="5" data-sizex="1" data-sizey="1">
+            <div  data-id="stsetlevel" data-view="Stsetlevel" data-icon="lightbulb-o" data-color="#FFFFFF" data-level="10" data-title="10%" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+            <div  data-id="stsetlevel" data-view="Stsetlevel" data-icon="lightbulb-o" data-color="#000000" data-level="off" data-title="Off" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+
+          <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
+            <div style="background-color:#6600CC" data-id="back" data-view="Changepage" data-icon="home" data-title="Home" data-page="1" data-stagger="false" data-fasttransition="true"></div>
+          </li>
+        </ul>
+    </div>
+   
+
+
+      
+    
+  </body>
+</html>

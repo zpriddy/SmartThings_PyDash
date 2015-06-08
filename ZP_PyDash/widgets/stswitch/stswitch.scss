@@ -1,0 +1,26 @@
+// ----------------------------------------------------------------------------
+// Widget styles
+// ----------------------------------------------------------------------------
+.widget-stswitch {
+  font-size: 150%;
+
+  background-color: #000 !important;
+
+  .title {
+    color: #fff;
+  }
+
+  .switch-icon-off .switch-icon-on {
+    font-size: 150%;
+  }
+
+  .switch-icon-off {
+    color: #888888;
+    background-color: #000 !important;
+  }
+
+  .switch-icon-on {
+  	color: #aaff00;
+  }
+
+}

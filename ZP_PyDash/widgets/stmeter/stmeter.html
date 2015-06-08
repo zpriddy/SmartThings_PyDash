@@ -1,0 +1,11 @@
+<h1 class="title" data-bind="title"></h1>
+
+<table>
+	<td>
+<input class="stmeter" data-angleOffset=-125 data-angleArc=250 data-width=90 data-height=65 data-readOnly=true data-bind-value="value | shortenedNumber" data-bind-data-min="min" data-bind-data-max="max" >
+</td>
+<td>
+
+<p class="value"  data-bind="energy | shortenedNumber | append ' kWh'"></p>
+</td>
+</table>
