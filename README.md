@@ -23,6 +23,8 @@ You can check the Gruntfile.js for the details, but basically grunt is setup to 
 
 To customize styling, edit the .scss files found throughout the project. There's one with each widget in ZP_PyDash/widgets, as well as the main one under ZP_PyDash/assets/stylesheets/application.scss.
 
+Anytime you modify SCSS files, application.css has to be recompiled. Run `grunt` to do this. Or, run `grunt watch` and it will automatically recompile application.css whenever is detects change to SCSS files anywhere in the project.
+
 *NOTE: Suggested future enhancement is to make these scss files more "locked down", and then offer a "custom.css" file or similar that will be gitignored, and will get concatenated onto the end of the compiled application.css. This will make it easier for novices to clone the project and do a little style customizing without having to dig around, and without having their customizations wiped out if they update.*
 
 ## Install the SmartApp

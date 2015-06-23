@@ -3,6 +3,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    
     concat: {
        dist: {
          src: [
@@ -18,14 +19,26 @@ module.exports = function(grunt) {
            'ZP_PyDash/assets/stylesheets/application.css':'.compile/build.scss'
          }
        }
-    }
+    },
+
+    // Run "grunt watch" while developing to have it keep an eye out for CSS changes
+    watch: {
+      scripts: {
+        files: ['**/*.scss'],
+        tasks: ['compile_css'],
+      },
+    },
   });
 
 
-  //Compile SASS
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
 
-  grunt.registerTask('default', ['concat', 'sass']);
+  grunt.registerTask('compile_css', ['concat', 'sass'])
+
+
+  // If we dont' tell it what to do...
+  grunt.registerTask('default', ['compile_css']);
 };
