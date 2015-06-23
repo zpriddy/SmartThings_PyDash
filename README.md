@@ -1,7 +1,7 @@
 
 # SmartThings PyDash
 ##### Credits:
-*Credit given to: FlorianZ for hadashboard [https://github.com/FlorianZ/hadashboard]*
+*Credit given to: FlorianZ for [hadashboard](https://github.com/FlorianZ/hadashboard)*
 
 
 ## Requirements and setup
