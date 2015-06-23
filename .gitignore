@@ -4,6 +4,7 @@ oauthin.json
 .sass-cache
 .compile
 *.map
+application.css
 
 # Logs
 logs
