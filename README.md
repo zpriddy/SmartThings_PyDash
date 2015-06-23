@@ -60,5 +60,8 @@ open your browser and goto http://localhost:5000/
 
 ## To Do:
 * Add a Update All devices function - This will make it so all devices are updated in only one call.
+* Add custom.css file support so users can easily override styles without impacting the "core" app.
+* Add grunt auto-watch task so it can keep running while you develop and automatically catch/compile CSS changes
+* Add grunt JS concatination/minification task.
 
 
