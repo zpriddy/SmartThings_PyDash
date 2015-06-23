@@ -4,27 +4,21 @@
 *Credit given to: FlorianZ for hadashboard [https://github.com/FlorianZ/hadashboard]*
 
 
-## Requirements
-To run SmartThings PyDash, you'll need the python packages specified in [requirements.txt](./requirements.txt). Note that this application is built on [pyDashie](https://github.com/evolvedlight/pydashie) and and so has the same runtime requirements. Those packages are:
+## Requirements and setup
 
-````
-*flask>=0.9
-*CoffeeScript
-*requests
-````
-You can install those from the root of this project by running
-
-`pip install -r requirements.txt`
-
-from the project root.
-
-
-## Developing
-*If you aren't planning on contributing to this project, skip to the next section, "Install the SmartApp"*
-
-### Required
 *[NPM](https://docs.npmjs.com/getting-started/installing-node)
 *[Grunt](http://gruntjs.com/)
+*Python
+*[PIP](https://pip.pypa.io/en/stable/installing.html)
+
+To run SmartThings PyDash, you'll need the python packages specified in [requirements.txt](./requirements.txt). Note that this application is built on [pyDashie](https://github.com/evolvedlight/pydashie) and and so has the same runtime requirements. 
+
+Once you have the above installed on your computer, and this repository cloned/downloading do the following from the project root to get the environment setup for running SmartThings PyDash:
+
+1. `pip install -r requirements.txt`
+1. `npm install`
+1. `grunt`
+
 
 ### Recommended
 *[virtualenv](https://pypi.python.org/pypi/virtualenv)

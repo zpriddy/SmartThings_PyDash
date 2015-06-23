@@ -4,6 +4,8 @@ oauthin.json
 .sass-cache
 .compile
 *.map
+
+# We need to ignore application.css because it is the compiled CSS. It may include a user's customizations.
 application.css
 
 # Logs
