@@ -13,7 +13,7 @@
 
 To run SmartThings PyDash, you'll need the python packages specified in [requirements.txt](./requirements.txt). Note that this application is built on [pyDashie](https://github.com/evolvedlight/pydashie) and and so has the same runtime requirements. 
 
-Once you have the above installed on your computer, and this repository cloned/downloading do the following from the project root to get the environment setup for running SmartThings PyDash:
+Once you have the above requirements installed on your computer, and this repository cloned/downloaded, do the following from the project root to get the environment setup for running SmartThings PyDash:
 
 1. `pip install -r requirements.txt`
 1. `npm install`
