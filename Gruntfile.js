@@ -39,6 +39,6 @@ module.exports = function(grunt) {
   grunt.registerTask('compile_css', ['concat', 'sass'])
 
 
-  // If we dont' tell it what to do...
-  grunt.registerTask('default', ['compile_css']);
+  // If we don't tell it what to do...
+  grunt.registerTask('default', ['compile_css', 'watch']);
 };
