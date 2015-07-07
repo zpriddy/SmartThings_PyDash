@@ -1,3 +1,20 @@
 *.pyc
 smartthings.json
 oauthin.json
+.sass-cache
+.compile
+*.map
+
+# We need to ignore application.css because it is the compiled CSS. It may include a user's customizations.
+application.css
+
+# Logs
+logs
+*.log
+
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Dependency directory
+# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
+node_modules

@@ -392,9 +392,7 @@ def javascripts():
 @app.route('/assets/application.css')
 def application_css():
     scripts = [
-        'assets/stylesheets/application.css',
-        'widgets/sttemp/sttemp.scss',
-        'widgets/stcontact/stcontact.scss',
+        'assets/stylesheets/application.css'
     ]
     output = ''
     for path in scripts:
